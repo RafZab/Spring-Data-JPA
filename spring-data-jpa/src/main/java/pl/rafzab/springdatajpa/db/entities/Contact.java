@@ -17,7 +17,4 @@ public class Contact {
 
     @Column(nullable = false)
     private String phoneNumber;
-
-    @OneToOne(mappedBy = "contact", fetch = FetchType.EAGER)
-    private Client client;
 }

@@ -23,7 +23,4 @@ public class Address {
 
     @Column(nullable = false)
     private String country;
-
-    @OneToOne(mappedBy = "address", fetch = FetchType.EAGER)
-    private Client client;
 }

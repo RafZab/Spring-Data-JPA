@@ -2,9 +2,11 @@ package pl.rafzab.springdatajpa.db.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.BatchSize;
 
 @Data
 @Entity
+//@BatchSize(size = 3)
 @Table(name = "payments")
 public class Payment {
 
@@ -17,7 +19,4 @@ public class Payment {
 
     @Column(nullable = false)
     private String paymentMethod;
-
-    @OneToOne(mappedBy = "payment", fetch = FetchType.EAGER)
-    private Order order;
 }

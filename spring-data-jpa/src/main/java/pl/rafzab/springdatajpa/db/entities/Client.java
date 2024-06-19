@@ -2,11 +2,13 @@ package pl.rafzab.springdatajpa.db.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.BatchSize;
 
 import java.util.Set;
 
 @Data
 @Entity
+//@BatchSize(size = 100)
 @Table(name = "clients")
 public class Client {
 
@@ -21,9 +23,6 @@ public class Client {
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "contact_id", referencedColumnName = "id")
     private Contact contact;
-
-    @OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
-    private Set<Order> orders;
 
     @Column(nullable = false)
     private String name;
