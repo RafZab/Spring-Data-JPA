@@ -23,7 +23,6 @@ public class SpringDataJpaService {
 //        List<Order> orderList = orderRepository.findAllByQuery();
 //        List<Order> orderList = orderRepository.findAllByQueryNative();
 
-
         System.out.println("\n NATIVE PROJECTION \n");
         List<OrderDetails> orderDetailsList = orderRepository.findAllByQueryNativeProjection();
         orderDetailsList.forEach(orderDetails -> System.out.println(orderDetails.getAmount()));

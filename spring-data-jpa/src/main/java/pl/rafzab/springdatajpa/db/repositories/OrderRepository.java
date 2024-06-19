@@ -36,6 +36,7 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
     List<OrderDetailsDTO> findAllByQueryProjection();
 
     @EntityGraph(value = Order.WITH_ALL, type = EntityGraph.EntityGraphType.FETCH)
+//    @EntityGraph(value = Order.WITH_ALL, type = EntityGraph.EntityGraphType.LOAD)
     @Query("SELECT o FROM Order o")
     List<Order> findAllByWithGraph();
 }

@@ -16,7 +16,7 @@ import java.sql.Date;
                 @NamedSubgraph(
                         name = "client.withAll",
                         attributeNodes = {
-                                @NamedAttributeNode("contact"),
+//                                @NamedAttributeNode("contact"),
                                 @NamedAttributeNode("address")
                         }
                 )
